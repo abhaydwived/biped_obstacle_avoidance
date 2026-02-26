@@ -1,0 +1,503 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="biped_urdf_ff">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="0.0567114891561859 -0.149421333987205 0.0849439592220374"
+        rpy="0 0 0" />
+      <mass
+        value="0.171395163597277" />
+      <inertia
+        ixx="8.15294272941173E-05"
+        ixy="-5.98391970804399E-12"
+        ixz="-2.02031529968224E-08"
+        iyy="0.000195580300315273"
+        iyz="-1.73311691279713E-20"
+        izz="0.000138818427725874" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://biped_urdf_ff/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://biped_urdf_ff/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="ll1">
+    <inertial>
+      <origin
+        xyz="-0.0331301764718445 0.00604643754613932 -3.68662978805223E-05"
+        rpy="0 0 0" />
+      <mass
+        value="0.0590705733476927" />
+      <inertia
+        ixx="1.3308524861968E-05"
+        ixy="2.12007467904402E-06"
+        ixz="-2.95970560725237E-07"
+        iyy="1.45598336886888E-05"
+        iyz="1.28835885169357E-06"
+        izz="2.36088365145483E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://biped_urdf_ff/meshes/ll1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://biped_urdf_ff/meshes/ll1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="cont1"
+    type="revolute">
+    <origin
+      xyz="0.11411 -0.1504 0"
+      rpy="1.684 1.5708 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="ll1" />
+    <axis
+      xyz="1 0 0" />
+    <limit lower="-0.52" upper="0.52" effort="3.43" velocity="5.41" /></joint>
+  <link
+    name="ll2">
+    <inertial>
+      <origin
+        xyz="0.0747779942153111 -0.0015380803774169 -0.0218633616073591"
+        rpy="0 0 0" />
+      <mass
+        value="0.0795049231060893" />
+      <inertia
+        ixx="3.09998801536096E-05"
+        ixy="1.35614013922281E-07"
+        ixz="1.0693565430683E-05"
+        iyy="4.83526085393693E-05"
+        iyz="3.04933886709055E-06"
+        izz="6.62869503170479E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://biped_urdf_ff/meshes/ll2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://biped_urdf_ff/meshes/ll2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="cont2"
+    type="revolute">
+    <origin
+      xyz="-0.0065092 0 0.001448"
+      rpy="3.1416 0.33619 0" />
+    <parent
+      link="ll1" />
+    <child
+      link="ll2" />
+    <axis
+      xyz="0 1 0" />
+    <limit lower="0" upper="1.2" effort="3.43" velocity="5.64" /></joint>
+  <link
+    name="ll3">
+    <inertial>
+      <origin
+        xyz="0.0679591418386996 -0.0025267688983088 -0.0649049376822795"
+        rpy="0 0 0" />
+      <mass
+        value="0.0795043675969588" />
+      <inertia
+        ixx="3.28803449611899E-05"
+        ixy="5.95663063788888E-07"
+        ixz="1.33285160279409E-05"
+        iyy="4.83673600980289E-05"
+        iyz="2.95344731148219E-06"
+        izz="6.43915708182226E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://biped_urdf_ff/meshes/ll3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://biped_urdf_ff/meshes/ll3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="cont3" type="revolute">
+  <origin xyz="0.1324 0 0.00094799" rpy="0 0.0053505 0"/>
+  <parent link="ll2"/>
+  <child link="ll3"/>
+  <axis xyz="0 1 0"/>
+  <limit lower="0" upper="1.2" effort="3.43" velocity="5.88"/></joint>
+  <link
+    name="ll4">
+    <inertial>
+      <origin
+        xyz="0.0341316110659375 -2.84381394506095E-05 0.0660571788224024"
+        rpy="0 0 0" />
+      <mass
+        value="0.148691958525113" />
+      <inertia
+        ixx="0.000133576095288607"
+        ixy="3.32645197858341E-06"
+        ixz="2.68401421549814E-05"
+        iyy="0.000120549643497903"
+        iyz="-7.44971378871517E-06"
+        izz="7.27617764964248E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://biped_urdf_ff/meshes/ll4.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://biped_urdf_ff/meshes/ll4.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="cont4" type="revolute">
+  <origin xyz="0.1324 0 0.0000" rpy="-3.1416 0.12441 0"/>
+  <parent link="ll3"/>
+  <child link="ll4"/>
+  <axis xyz="0 1 0"/>
+  <limit lower="0.2" upper="0.87" effort="1.57" velocity="3.57"/>
+</joint>
+  <link
+    name="rf1">
+    <inertial>
+      <origin
+        xyz="-0.0331301764718445 0.00581058927427622 0.00167266805104854"
+        rpy="0 0 0" />
+      <mass
+        value="0.0590705733476928" />
+      <inertia
+        ixx="1.3308524861968E-05"
+        ixy="2.11733465122801E-06"
+        ixz="3.14974907331942E-07"
+        iyy="1.45836876795204E-05"
+        iyz="-1.36936275263394E-06"
+        izz="2.35849825237168E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://biped_urdf_ff/meshes/rf1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://biped_urdf_ff/meshes/rf1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="cont5"
+    type="revolute">
+    <origin
+      xyz="-0.00068189 -0.1503 0"
+      rpy="-1.6657 1.5708 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="rf1" />
+    <axis
+      xyz="1 0 0" />
+    <limit lower="-0.52" upper="0.52" effort="3.42" velocity="5.41" /></joint>
+  <link
+    name="rf2">
+    <inertial>
+      <origin
+        xyz="0.0623940392284774 -0.00178578809250587 -0.0466810680014669"
+        rpy="0 0 0" />
+      <mass
+        value="0.079502800307503" />
+      <inertia
+        ixx="4.19000267872577E-05"
+        ixy="-2.38470559264119E-06"
+        ixz="1.94794815008575E-05"
+        iyy="4.84070146342394E-05"
+        iyz="-2.1759096954969E-06"
+        izz="5.53316546324245E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://biped_urdf_ff/meshes/rf2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://biped_urdf_ff/meshes/rf2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="cont6"
+    type="revolute">
+    <origin
+      xyz="-0.0065092 0 0.001448"
+      rpy="3.1416 0.56368 0" />
+    <parent
+      link="rf1" />
+    <child
+      link="rf2" />
+    <axis
+      xyz="0 1 0" />
+    <limit lower="0" upper="1.2" effort="3.43" velocity="5.64" /></joint>
+  <link
+    name="rf3">
+    <inertial>
+      <origin
+        xyz="0.111733929823043 -0.00408469090397937 0.0446832738160031"
+        rpy="0 0 0" />
+      <mass
+        value="0.0795039222090655" />
+      <inertia
+        ixx="6.26132172708374E-05"
+        ixy="2.84147603278887E-06"
+        ixz="-1.51367364008548E-05"
+        iyy="4.84197016667648E-05"
+        iyz="-1.29514773944099E-06"
+        izz="3.46058798148801E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://biped_urdf_ff/meshes/rf3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://biped_urdf_ff/meshes/rf3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="cont7" type="revolute">
+  <origin xyz="0.1324 0 0.00094799" rpy="0 1.5652 0"/>
+  <parent link="rf2"/>
+  <child link="rf3"/>
+  <axis xyz="0 1 0"/>
+  <!-- OPTION A (positive flexion like cont6): -->
+  <limit lower="0" upper="1.2" effort="3.43" velocity="5.88"/>
+  <!-- OPTION B (negative flexion):
+  <limit lower="-1.2" upper="0" effort="3.43" velocity="5.88"/>
+  -->
+</joint>
+  <link
+    name="rf4">
+    <inertial>
+      <origin
+        xyz="0.0859790175079487 -0.00275015617244208 0.0775130401914741"
+        rpy="0 0 0" />
+      <mass
+        value="0.148691920517922" />
+      <inertia
+        ixx="0.000107881393728608"
+        ixy="-6.21822668131555E-06"
+        ixz="4.02229709564655E-05"
+        iyy="0.000120439021775147"
+        iyz="5.934580748932E-06"
+        izz="9.85669688287998E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://biped_urdf_ff/meshes/rf4.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://biped_urdf_ff/meshes/rf4.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="cont8" type="revolute">
+  <origin xyz="0.1324 0 0.0000" rpy="0 -0.4873 0"/>
+  <parent link="rf3"/>
+  <child link="rf4"/>
+  <axis xyz="0 1 0"/>
+  <limit lower="-0.2" upper="0.87" effort="1.57" velocity="3.57"/>
+</joint>
+  <link
+    name="box">
+    <inertial>
+      <origin
+        xyz="-0.109733214898333 -0.059064905125655 -0.0423874933094609"
+        rpy="0 0 0" />
+      <mass
+        value="0.614519680968721" />
+      <inertia
+        ixx="0.000911441769130836"
+        ixy="1.37970050157051E-07"
+        ixz="3.86155451540105E-07"
+        iyy="0.0012776894908344"
+        iyz="2.7621057789539E-06"
+        izz="0.00186826782081066" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://biped_urdf_ff/meshes/box.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://biped_urdf_ff/meshes/box.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="fix_f"
+    type="fixed">
+    <origin
+      xyz="0.16558 -0.088013 0.18246"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="box" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+</robot>

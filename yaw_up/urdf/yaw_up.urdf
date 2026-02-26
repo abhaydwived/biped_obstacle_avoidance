@@ -1,0 +1,479 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="yaw_up">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="0.0627679994949339 0.118390187178668 0.120701728364036"
+        rpy="0 0 0" />
+      <mass
+        value="0.171395163597277" />
+      <inertia
+        ixx="8.1536530058795E-05"
+        ixy="-5.60903798702699E-07"
+        ixz="3.80437093139824E-07"
+        iyy="0.000139361066214885"
+        iyz="5.55463363232956E-06"
+        izz="0.000195030559061584" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://yaw_up/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://yaw_up/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="ll1">
+    <inertial>
+      <origin
+        xyz="-0.0420347956040815 0.00676838766069543 0.000831994100401356"
+        rpy="0 0 0" />
+      <mass
+        value="0.0567619776679608" />
+      <inertia
+        ixx="1.14756917470476E-05"
+        ixy="1.35960268927184E-06"
+        ixz="-2.99195986456226E-12"
+        iyy="1.3932671458358E-05"
+        iyz="-1.2147473907434E-11"
+        izz="2.16624601638867E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://yaw_up/meshes/ll1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://yaw_up/meshes/ll1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="cont1"
+    type="revolute">
+    <origin
+      xyz="0.121103017217308 -0.130629139818877 0.0261829037749329"
+      rpy="0.471262856650424 1.47186001227126 -1.46893419609193" />
+    <parent
+      link="base_link" />
+    <child
+      link="ll1" />
+    <axis
+      xyz="1 0 0" />
+    <limit lower="-0.6" upper="0.6" effort="10" velocity="4" />
+  </joint>
+  <link
+    name="ll2">
+    <inertial>
+      <origin
+        xyz="0.0778980644517551 -0.00188050071023185 -0.000136279288433419"
+        rpy="0 0 0" />
+      <mass
+        value="0.0795021958276127" />
+      <inertia
+        ixx="2.80100482545646E-05"
+        ixy="-5.0750905787742E-07"
+        ixz="-6.23846255757303E-07"
+        iyy="4.79478664371899E-05"
+        iyz="-4.80555281518637E-09"
+        izz="6.96783926461646E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://yaw_up/meshes/ll2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://yaw_up/meshes/ll2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="cont2"
+    type="revolute">
+    <origin
+      xyz="-0.0158829970163555 0 0.00144799409181526"
+      rpy="3.14159265358979 0.342013643737887 0" />
+    <parent
+      link="ll1" />
+    <child
+      link="ll2" />
+    <axis
+      xyz="0 -1 0" />
+    <limit lower="-0.3" upper="0.87" effort="10" velocity="4" />
+  </joint>
+  <link
+    name="ll3">
+    <inertial>
+      <origin
+        xyz="0.0778972332409252 -0.00303044202228217 -0.000136254616679127"
+        rpy="0 0 0" />
+      <mass
+        value="0.0795039389987274" />
+      <inertia
+        ixx="2.80103436690538E-05"
+        ixy="-5.07916773490461E-07"
+        ixz="-6.2387840351977E-07"
+        iyy="4.79482953658807E-05"
+        iyz="-4.9837759444308E-09"
+        izz="6.96791063857567E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://yaw_up/meshes/ll3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://yaw_up/meshes/ll3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="cont3"
+    type="revolute">
+    <origin
+      xyz="0.132403980397028 0 0.000947994091809776"
+      rpy="0 0.189269243876191 0" />
+    <parent
+      link="ll2" />
+    <child
+      link="ll3" />
+    <axis
+      xyz="0 -1 0" />
+    <limit lower="-1" upper="0" effort="10" velocity="4" />
+  </joint>
+  <link
+    name="ll4">
+    <inertial>
+      <origin
+        xyz="-1.38777878078145E-17 -0.00436556542581049 -0.0362160119976063"
+        rpy="0 0 0" />
+      <mass
+        value="0.144582107490847" />
+      <inertia
+        ixx="6.19050303018409E-05"
+        ixy="8.13151629364128E-20"
+        ixz="-1.27054942088145E-20"
+        iyy="0.00023855999560411"
+        iyz="3.60062576501089E-07"
+        izz="0.00027237837889079" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://yaw_up/meshes/ll4.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.627450980392157 0.627450980392157 0.627450980392157 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://yaw_up/meshes/ll4.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="cont4"
+    type="revolute">
+    <origin
+      xyz="0.132403980397011 0 0.000947994091808471"
+      rpy="0 -1.28430634760588 0" />
+    <parent
+      link="ll3" />
+    <child
+      link="ll4" />
+    <axis
+      xyz="0 -1 0" />
+    <limit lower="-0.2" upper="0.78" effort="5" velocity="3" />
+  </joint>
+  <link
+    name="rf1">
+    <inertial>
+      <origin
+        xyz="-0.0415558839107142 0.00676838766069546 0.000831994100401384"
+        rpy="0 0 0" />
+      <mass
+        value="0.0567619776679608" />
+      <inertia
+        ixx="1.14756917470476E-05"
+        ixy="1.35960268927185E-06"
+        ixz="-2.99195985958594E-12"
+        iyy="1.3932671458358E-05"
+        iyz="-1.21474739209866E-11"
+        izz="2.16624601638867E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://yaw_up/meshes/rf1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://yaw_up/meshes/rf1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="cont5"
+    type="revolute">
+    <origin
+      xyz="0.00631271314130238 -0.130915886178834 0.0255338596048635"
+      rpy="2.87357474133709 1.47186001227126 -1.46893419609193" />
+    <parent
+      link="base_link" />
+    <child
+      link="rf1" />
+    <axis
+      xyz="1 0 0" />
+    <limit lower="-0.6" upper="0.6" effort="10" velocity="4"/>
+  </joint>
+  <link
+    name="rf2">
+    <inertial>
+      <origin
+        xyz="0.0778972376943017 -0.00288022926783998 -0.000136427684923654"
+        rpy="0 0 0" />
+      <mass
+        value="0.079503267737485" />
+      <inertia
+        ixx="2.80103657687164E-05"
+        ixy="-5.07468632221227E-07"
+        ixz="-6.23919397242849E-07"
+        iyy="4.79480059195122E-05"
+        iyz="-4.69428718569277E-09"
+        izz="6.96787313462689E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://yaw_up/meshes/rf2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://yaw_up/meshes/rf2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="cont6"
+    type="revolute">
+    <origin
+      xyz="-0.0154040853229882 0 0.00144799409181529"
+      rpy="-3.14159265358979 -0.37603557805053 0" />
+    <parent
+      link="rf1" />
+    <child
+      link="rf2" />
+    <axis
+      xyz="0 1 0" />
+    <limit lower="-0.3" upper="0.87" effort="10" velocity="4" />
+  </joint>
+  <link
+    name="rf3">
+    <inertial>
+      <origin
+        xyz="0.0778974295354088 -0.00403019939969158 -0.000136447709444154"
+        rpy="0 0 0" />
+      <mass
+        value="0.0795028878295167" />
+      <inertia
+        ixx="2.80103856382154E-05"
+        ixy="-5.07437893365299E-07"
+        ixz="-6.23915394961065E-07"
+        iyy="4.7948011764352E-05"
+        iyz="-4.68773674677529E-09"
+        izz="6.96787414375636E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://yaw_up/meshes/rf3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://yaw_up/meshes/rf3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="cont7"
+    type="revolute">
+    <origin
+      xyz="0.13240398039702 0 0.00094799409181541"
+      rpy="0 -0.152487783275856 0" />
+    <parent
+      link="rf2" />
+    <child
+      link="rf3" />
+    <axis
+      xyz="0 1 0" />
+    <limit lower="-1" upper="0" effort="10" velocity="4" />
+  </joint>
+  <link
+    name="rf4">
+    <inertial>
+      <origin
+        xyz="-3.67761376907083E-16 -0.00536556459134571 -0.0362160119976065"
+        rpy="0 0 0" />
+      <mass
+        value="0.144582107490847" />
+      <inertia
+        ixx="6.19050303018409E-05"
+        ixy="1.9312351197398E-19"
+        ixz="2.46063071177374E-19"
+        iyy="0.00023855999560411"
+        iyz="3.60062576501162E-07"
+        izz="0.00027237837889079" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://yaw_up/meshes/rf4.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.627450980392157 0.627450980392157 0.627450980392157 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://yaw_up/meshes/rf4.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="cont8"
+    type="revolute">
+    <origin
+      xyz="0.132403980397021 0 0.000947994091815341"
+      rpy="-3.14159265358978 -1.39390510815192 3.14159265358978" />
+    <parent
+      link="rf3" />
+    <child
+      link="rf4" />
+    <axis
+      xyz="0 1 0" />
+    <limit lower="-0.2" upper="0.78" effort="5" velocity="3" />
+  </joint>
+</robot>
