@@ -1,0 +1,70 @@
+% Main Results Table
+\begin{table}[htbp]
+\centering
+\caption{Performance metrics across different obstacle densities. All values represent means over 100 evaluation episodes.}
+\label{tab:main_results}
+\begin{tabular}{cccccccc}
+\toprule
+\textbf{Obstacles} & \textbf{SR (\%)} & \textbf{SPL} & \textbf{CR (\%)} & \textbf{FR (\%)} & \textbf{CoT} & \textbf{Reward} & \textbf{Steps} \\
+\midrule
+5 & \textbf{100.0} & \textbf{0.975} & 1.0 & 0.0 & 14.40 & \textbf{2487.2} & 306.5 \\
+10 & 98.0 & 0.955 & 3.0 & 2.0 & 14.33 & 2380.2 & 312.5 \\
+15 & 96.0 & 0.937 & 5.0 & 4.0 & 14.42 & 2327.0 & 316.0 \\
+20 & 94.0 & 0.919 & 5.0 & 6.0 & \textbf{14.22} & 2286.0 & 312.8 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+
+% Comparison Table
+\begin{table}[htbp]
+\centering
+\caption{Relative performance change compared to baseline (5 obstacles). Negative values indicate degradation.}
+\label{tab:comparison}
+\begin{tabular}{ccccc}
+\toprule
+\textbf{Obstacles} & \textbf{$\Delta$ SR (\%)} & \textbf{$\Delta$ SPL (\%)} & \textbf{$\Delta$ CoT (\%)} & \textbf{CR+FR (\%)} \\
+\midrule
+5 & --- & --- & --- & 1.0 \\
+10 & -2.0 & -2.1 & -0.5 & 5.0 \\
+15 & -4.0 & -3.9 & +0.1 & 9.0 \\
+20 & -6.0 & -5.7 & -1.2 & 11.0 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+
+% Statistical Summary Table
+\begin{table}[htbp]
+\centering
+\caption{Statistical summary of path planning and energy metrics.}
+\label{tab:statistics}
+\begin{tabular}{ccccc}
+\toprule
+\textbf{Obstacles} & \textbf{$L_{act}$ (m)} & \textbf{$L_{opt}$ (m)} & \textbf{Efficiency (\%)} & \textbf{Goal Dist (m)} \\
+\midrule
+5 & 6.24 & 6.09 & 97.5\% & 0.344 \\
+10 & 6.28 & 6.19 & 98.6\% & 0.408 \\
+15 & 6.30 & 6.28 & 99.6\% & 0.456 \\
+20 & 6.23 & 6.33 & 101.6\% & 0.524 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+
+% Comprehensive Table (Fig 6 equivalent)
+\begin{table*}[htbp]
+\centering
+\caption{Comprehensive evaluation metrics across obstacle densities. All values represent means over 100 evaluation episodes.}
+\label{tab:comprehensive_results}
+\begin{tabular}{ccccccccccc}
+\toprule
+\textbf{Obs} & \textbf{SR (\%)} & \textbf{SPL} & \textbf{CR (\%)} & \textbf{FR (\%)} & \textbf{CoT} & \textbf{Reward} & \textbf{Path Dev (m)} & \textbf{$L_{act}$ (m)} & \textbf{$L_{opt}$ (m)} & \textbf{Dist (m)} \\
+\midrule
+5 & \textbf{100.0} & \textbf{0.975} & 1.0 & 0.0 & 14.40 & \textbf{2487.2} & 0.15 \pm 0.09 & 6.24 & 6.09 & 0.344 \\
+10 & 98.0 & 0.955 & 3.0 & 2.0 & 14.33 & 2380.2 & 0.09 \pm 0.58 & 6.28 & 6.19 & 0.408 \\
+15 & 96.0 & 0.937 & 5.0 & 4.0 & 14.42 & 2327.0 & 0.02 \pm 0.71 & 6.30 & 6.28 & 0.456 \\
+20 & 94.0 & 0.919 & 5.0 & 6.0 & \textbf{14.22} & 2286.0 & -0.10 \pm 1.10 & 6.23 & 6.33 & 0.524 \\
+\bottomrule
+\end{tabular}
+\end{table*}
