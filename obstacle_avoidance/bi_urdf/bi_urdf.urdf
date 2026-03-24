@@ -1,0 +1,251 @@
+<?xml version='1.0' encoding='utf-8'?>
+<robot name="bi_urdf">
+  <!-- ================= BASE ================= -->
+  <link name="base_link">
+    <inertial>
+      <origin xyz="0.0567114891561859 0.0849439592220373 0.149421333987205" rpy="0 0 0"/>
+      <mass value="0.171395163597277"/>
+      <inertia ixx="8.15294272941173E-05" ixy="-2.02031529968215E-08" ixz="5.98391970806169E-12"
+               iyy="0.000138818427725874" iyz="1.25115494357392E-20" izz="0.000195580300315273"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry><mesh filename="package://bi_urdf/meshes/base_link.STL"/></geometry>
+      <material name=""><color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1"/></material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry><mesh filename="package://bi_urdf/meshes/base_link.STL"/></geometry>
+    </collision>
+  </link>
+
+  <!-- ================= LEFT LEG ================= -->
+  <link name="ll1">
+    <inertial>
+      <origin xyz="-0.0331301764718445 0.0059934631782641 0.00079947811355896" rpy="0 0 0"/>
+      <mass value="0.0590705733476927"/>
+      <inertia ixx="1.3308524861968E-05" ixy="2.14063430261469E-06" ixz="-2.99195985855362E-12"
+               iyy="1.43799773807184E-05" iyz="-1.21474739180219E-11" izz="2.37886928225187E-05"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry><mesh filename="package://bi_urdf/meshes/ll1.STL"/></geometry>
+      <material name=""><color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1"/></material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry><mesh filename="package://bi_urdf/meshes/ll1.STL"/></geometry>
+    </collision>
+  </link>
+
+  <!-- Left hip -->
+  <joint name="cont1" type="revolute">
+    <origin xyz="0.11411 -0.1504 0" rpy="1.684 1.5708 0"/>
+    <parent link="base_link"/>
+    <child link="ll1"/>
+    <axis xyz="1 0 0"/>
+    <!-- effort +20%, velocity -15% -->
+    <limit lower="-0.32" upper="0.32" effort="4.12" velocity="4.60"/>
+  </joint>
+
+  <link name="ll2">
+    <inertial>
+      <origin xyz="0.0778982604545579 -0.00188038436766949 -0.000136280275821715" rpy="0 0 0"/>
+      <mass value="0.0795021386782517"/>
+      <inertia ixx="2.80103394628434E-05" ixy="-5.07840329373671E-07" ixz="-6.24048642295068E-07"
+               iyy="4.79485384385568E-05" iyz="-4.85497821551154E-09" izz="6.96791885207485E-05"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry><mesh filename="package://bi_urdf/meshes/ll2.STL"/></geometry>
+      <material name=""><color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1"/></material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry><mesh filename="package://bi_urdf/meshes/ll2.STL"/></geometry>
+    </collision>
+  </link>
+
+  <!-- Left upper leg (pitch) -->
+  <joint name="cont2" type="revolute">
+    <origin xyz="-0.0065092 0 0.001448" rpy="3.1416 0.33619 0"/>
+    <parent link="ll1"/>
+    <child link="ll2"/>
+    <axis xyz="0 1 0"/>
+    <!-- effort +20%, velocity -15% -->
+    <limit lower="0.0" upper="1.2" effort="4.12" velocity="4.79"/>
+  </joint>
+
+  <link name="ll3">
+    <inertial>
+      <origin xyz="0.0778976796340647 -0.00303014713788041 -0.000136385683643853" rpy="0 0 0"/>
+      <mass value="0.0795031696493418"/>
+      <inertia ixx="2.80107149584798E-05" ixy="-5.07630150300652E-07" ixz="-6.24134776035916E-07"
+               iyy="4.79488600662513E-05" iyz="-4.71096969100992E-09" izz="6.96797618128892E-05"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry><mesh filename="package://bi_urdf/meshes/ll3.STL"/></geometry>
+      <material name=""><color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1"/></material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry><mesh filename="package://bi_urdf/meshes/ll3.STL"/></geometry>
+    </collision>
+  </link>
+
+  <!-- Left knee -->
+  <joint name="cont3" type="revolute">
+    <origin xyz="0.1324 0 0.00094799" rpy="0 0.0053505 0"/>
+    <parent link="ll2"/>
+    <child link="ll3"/>
+    <axis xyz="0 1 0"/>
+    <!-- effort +20% (from 6.0), velocity -15% -->
+    <limit lower="0.0" upper="1.2" effort="7.2" velocity="5.1"/>
+  </joint>
+
+  <link name="ll4">
+    <inertial>
+      <origin xyz="0.0323728229309788 0.00403307760573293 -0.0259374292242309" rpy="0 0 0"/>
+      <mass value="0.148691452005003"/>
+      <inertia ixx="0.000141408471608347" ixy="-7.35013992628706E-11" ixz="1.36402639413287E-05"
+               iyy="0.000121661823888846" iyz="4.44078269580986E-11" izz="6.3815096631629E-05"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry><mesh filename="package://bi_urdf/meshes/ll4.STL"/></geometry>
+      <material name=""><color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1"/></material>
+    </visual>
+
+    <!-- Flat sole collision box -->
+    <collision>
+      <origin xyz="0.02 0.0 -0.01" rpy="0 0 0"/>
+      <geometry><box size="0.12 0.06 0.02"/></geometry>
+    </collision>
+  </link>
+
+  <!-- Left ankle -->
+  <joint name="cont4" type="revolute">
+    <origin xyz="0.1324 0 0" rpy="-3.1416 0.12441 0.1"/>
+    <parent link="ll3"/>
+    <child link="ll4"/>
+    <axis xyz="0 1 0"/>
+    <!-- effort +20%, velocity -15% -->
+    <limit lower="-0.5" upper="0.7" effort="4.8" velocity="3.4"/>
+  </joint>
+
+  <!-- ================= RIGHT LEG ================= -->
+  <link name="rf1">
+    <inertial>
+      <origin xyz="-0.0331301764718445 0.00599346317826412 0.000799478113558877" rpy="0 0 0"/>
+      <mass value="0.0590705733476927"/>
+      <inertia ixx="1.3308524861968E-05" ixy="2.14063430261468E-06" ixz="-2.99195985866666E-12"
+               iyy="1.43799773807184E-05" iyz="-1.2147473906587E-11" izz="2.37886928225187E-05"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry><mesh filename="package://bi_urdf/meshes/rf1.STL"/></geometry>
+      <material name=""><color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1"/></material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry><mesh filename="package://bi_urdf/meshes/rf1.STL"/></geometry>
+    </collision>
+  </link>
+
+  <!-- Right hip -->
+  <joint name="cont5" type="revolute">
+    <origin xyz="-0.00068189 -0.1503 0" rpy="-1.684 1.5708 0"/>
+    <parent link="base_link"/>
+    <child link="rf1"/>
+    <axis xyz="1 0 0"/>
+    <!-- effort +20%, velocity -15% -->
+    <limit lower="-0.52" upper="0.52" effort="4.10" velocity="4.60"/>
+  </joint>
+
+  <link name="rf2">
+    <inertial>
+      <origin xyz="0.0778985515392482 -0.00288004846033524 -0.000136476683728737" rpy="0 0 0"/>
+      <mass value="0.0795019689262471"/>
+      <inertia ixx="2.80103488233918E-05" ixy="-5.07353683898513E-07" ixz="-6.24315510033273E-07"
+               iyy="4.79484668398027E-05" iyz="-4.92358754028956E-09" izz="6.96791217969134E-05"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry><mesh filename="package://bi_urdf/meshes/rf2.STL"/></geometry>
+      <material name=""><color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1"/></material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry><mesh filename="package://bi_urdf/meshes/rf2.STL"/></geometry>
+    </collision>
+  </link>
+
+  <!-- Right upper leg (pitch) -->
+  <joint name="cont6" type="revolute">
+    <origin xyz="-0.0065092 0 0.001448" rpy="3.1416 0.33619 0"/>
+    <parent link="rf1"/>
+    <child link="rf2"/>
+    <axis xyz="0 1 0"/>
+    <!-- effort +20%, velocity -15% -->
+    <limit lower="0.0" upper="1.2" effort="4.12" velocity="4.79"/>
+  </joint>
+
+  <link name="rf3">
+    <inertial>
+      <origin xyz="0.0778986419083725 -0.0040304270423848 -0.000136464415692622" rpy="0 0 0"/>
+      <mass value="0.0795017739594857"/>
+      <inertia ixx="2.80102442958975E-05" ixy="-5.08144435641516E-07" ixz="-6.24292753533907E-07"
+               iyy="4.79482686237526E-05" iyz="-4.58116491178416E-09" izz="6.96787760982269E-05"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry><mesh filename="package://bi_urdf/meshes/rf3.STL"/></geometry>
+      <material name=""><color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1"/></material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry><mesh filename="package://bi_urdf/meshes/rf3.STL"/></geometry>
+    </collision>
+  </link>
+
+  <!-- Right knee -->
+  <joint name="cont7" type="revolute">
+    <origin xyz="0.1324 0 0.00094799" rpy="0 0.0053505 0"/>
+    <parent link="rf2"/>
+    <child link="rf3"/>
+    <axis xyz="0 1 0"/>
+    <!-- effort +20% (from 6.0), velocity -15% -->
+    <limit lower="0.0" upper="-1.2" effort="7.2" velocity="5.1"/>
+  </joint>
+
+  <link name="rf4">
+    <inertial>
+      <origin xyz="0.0323727969942671 -0.00503310259820185 -0.0259372246375299" rpy="0 0 0"/>
+      <mass value="0.148690566734215"/>
+      <inertia ixx="0.000141406802440884" ixy="-8.86260460081181E-11" ixz="1.36400187170798E-05"
+               iyy="0.000121660404134023" iyz="5.78555238334605E-11" izz="6.38148197232088E-05"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry><mesh filename="package://bi_urdf/meshes/rf4.STL"/></geometry>
+      <material name=""><color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1"/></material>
+    </visual>
+
+    <!-- Flat sole collision box -->
+    <collision>
+      <origin xyz="0.02 0.0 -0.01" rpy="0 0 0"/>
+      <geometry><box size="0.12 0.06 0.02"/></geometry>
+    </collision>
+  </link>
+
+  <!-- Right ankle -->
+  <joint name="cont8" type="revolute">
+    <origin xyz="0.1324 0 0" rpy="-6.2832 -0.5441 0"/>
+    <parent link="rf3"/>
+    <child link="rf4"/>
+    <axis xyz="0 1 0"/>
+    <!-- effort +20%, velocity -15% -->
+    <limit lower="-0.5" upper="0.7" effort="4.8" velocity="3.4"/>
+  </joint>
+</robot>

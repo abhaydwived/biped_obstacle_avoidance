@@ -1,0 +1,38 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# IDE and OS
+.vscode/
+.idea/
+.DS_Store
+
+# Virtual Environments
+venv/
+env/
+.env
+.venv/
+
+# Large binaries, models, and data
+*.zip
+*.tar.gz
+*.pt
+*.pth
+*.h5
+*.pb
+
+# Logs and Checkpoints
+logs/
+models/
+models_*/
+
+# Experiment Videos and Output Media
+Experiment videos/
+eval_metrics/
+*.mp4
+*.avi
+*.mkv
+
+# Temporary run files
+eval_met/
