@@ -1,4 +1,4 @@
-# Bipedal Robot Obstacle Avoidance using Deep Reinforcement Learning
+# Underactuated Biped Robot Obstacle Avoidance using Deep Reinforcement Learning
 
 > **Note:** This repository contains the official codebase and results for the paper currently under review at **IJCAI-ECAI 2026**.
 
