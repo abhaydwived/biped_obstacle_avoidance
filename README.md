@@ -2,6 +2,12 @@
 
 > **Note:** This repository contains the official codebase and results for the paper currently under review at **IJCAI-ECAI 2026**.
 
+## 🎥 Simulation Demonstration
+
+<div align="center">
+  <video src="Experiment videos/exp_final_pass.mp4" width="80%" controls autoplay loop muted></video>
+</div>
+
 ## 📌 Overview
 
 This project presents a robust and energy-efficient obstacle avoidance framework for an 8-DOF bipedal robot using Deep Reinforcement Learning (Soft Actor-Critic). By tightly integrating an A* planner with a responsive local control policy, the framework successfully navigates through densely cluttered environments while maintaining stability, minimizing energy consumption (Cost of Transport), and avoiding collisions or falls.
